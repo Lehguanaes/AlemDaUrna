@@ -1,64 +1,92 @@
-<<<<<<< HEAD
 # Além da Urna
 
-Projeto de Estruturas de Dados, 4º bimestre. Faculdade de Tecnologia da Zona Leste.
+**Uma aplicação em Java para explorar os resultados do primeiro turno presidencial de 2026 em São Paulo.**
 
-**Autores** Letícia Guanaes Moreira e Erick Ferreira Lima.  
-**Professora** Eliane Oliveira Santiago.
+Projeto de Estruturas de Dados do 4º bimestre de Análise e Desenvolvimento de Sistemas, na Fatec Zona Leste, com orientação da professora Eliane Oliveira Santiago.
 
-O programa organiza resultados do primeiro turno presidencial de 2026 em São Paulo, com dados do TSE agregados por município e candidato. Usa um deque implementado com lista duplamente ligada para manipular os registros. Também compara quatro algoritmos de ordenação e aplica tabelas hash às consultas de fronteiras e à listagem alfabética de cidades.
+## Sobre o projeto
 
-## Executar no NetBeans
+Quantos votos uma candidatura recebeu em cada município? O **Além da Urna** organiza os dados do TSE para facilitar essa consulta e demonstrar como estruturas de dados afetam a gravação, a busca e o tempo de processamento.
 
-1. Use o JDK 17 ou superior e abra a pasta do projeto que contém o `pom.xml`.
-2. Selecione **Limpar e Construir** e pressione **F6**.
-3. Na janela **Além da Urna**, selecione uma operação e clique em **OK**.
+A base reúne **7.740 registros**, de **645 municípios** e **12 candidaturas**. Cada linha representa o total de votos de uma candidatura em um município. O programa usa uma cópia local para os testes de inclusão, alteração e exclusão.
 
-A classe principal é `com.mycompany.alemdaurna.AlemDaUrna`. Na primeira execução, ela cria o arquivo `entrada.txt` a partir de `dados/base_original.txt`. A inclusão, a alteração e a exclusão pedem confirmação antes de gravar.
+## Como executar
 
-No Windows, use `compilar.bat` para gerar o JAR e `executar.bat` para abrir o menu. Em um terminal com Maven, rode os comandos na pasta do projeto:
+### NetBeans
 
-```powershell
+1. Use o **JDK 17 ou superior** e abra a pasta que contém o [pom.xml](pom.xml).
+2. Clique em **Limpar e Construir** e pressione **F6**.
+3. Na janela **Além da Urna**, selecione uma opção e clique em **OK**.
+
+Na primeira execução, a classe principal `com.mycompany.alemdaurna.AlemDaUrna` cria `entrada.txt` a partir da [base original](dados/base_original.txt).
+
+### Windows ou terminal
+
+No Windows, abra [compilar.bat](compilar.bat) e, após a compilação, [executar.bat](executar.bat). Se preferir usar Maven pelo terminal, execute na raiz do projeto:
+
+~~~powershell
 mvn clean package
 java -jar target/AlemDaUrna-1.0-SNAPSHOT.jar
-```
+~~~
 
-## Onde encontrar cada parte
+Acrescente `--console` ao comando `java -jar` para abrir o menu em modo texto.
 
-O código Java fica em [src/main/java/com/mycompany/alemdaurna](src/main/java/com/mycompany/alemdaurna).
+## O que experimentar
 
-| Arquivo | Responsabilidade |
+| Opções | O que o programa faz |
 | --- | --- |
-| [AlemDaUrna.java](src/main/java/com/mycompany/alemdaurna/AlemDaUrna.java) | Entrada principal, inicialização e modos de execução |
-| [Menu.java](src/main/java/com/mycompany/alemdaurna/Menu.java) | Operações, janelas do JOptionPane, confirmações e resultados |
-| [Registro.java](src/main/java/com/mycompany/alemdaurna/Registro.java) | Estrutura não homogênea do resultado eleitoral |
-| [DequeRegistros.java](src/main/java/com/mycompany/alemdaurna/DequeRegistros.java) | Nós, inserção nas pontas, busca linear e retirada pela ordem de inclusão |
-| [ArquivosDados.java](src/main/java/com/mycompany/alemdaurna/ArquivosDados.java) | Leiaute, leitura, validação e gravação em UTF-8 |
-| [Ordenacao.java](src/main/java/com/mycompany/alemdaurna/Ordenacao.java) | Bubble Sort, Insertion Sort, Selection Sort e Merge Sort |
-| [Pesquisa.java](src/main/java/com/mycompany/alemdaurna/Pesquisa.java) | Busca binária em arquivo ordenado por ID |
-| [TabelasHash.java](src/main/java/com/mycompany/alemdaurna/TabelasHash.java) | Fronteiras e cidades, com encadeamento para colisões |
-| [Desempenho.java](src/main/java/com/mycompany/alemdaurna/Desempenho.java) | Registro de tempos e comparação dos algoritmos |
-| [Normalizacao.java](src/main/java/com/mycompany/alemdaurna/Normalizacao.java) | Comparação de nomes sem distinguir acentos ou maiúsculas |
-| [ImportarTse.java](src/main/java/com/mycompany/alemdaurna/ImportarTse.java) | Entrada auxiliar para reproduzir a base a partir do CSV |
+| **1 a 4 · Leitura e cadastro** | Lê `entrada.txt`, insere em qualquer ponta do deque e permite alterar os votos pelo ID. A exclusão segue LIFO e remove o registro mais recente pela ordem de inclusão. |
+| **5 · Ordenação** | Aplica Bubble Sort, Insertion Sort, Selection Sort ou Merge Sort e grava a saída com o nome do algoritmo. |
+| **6 · Pesquisa** | Busca por nome ou ID na entrada ou em uma saída. Para usar a busca binária, ordene um arquivo por ID na opção 5. |
+| **7 e 8 · Tabelas hash** | Consulta fronteiras terrestres por país e lista cidades em ordem alfabética, salvando `cidades_ordenadas.txt`. |
+| **9 · Desempenho** | Compara os quatro algoritmos em diferentes tamanhos e ordens iniciais. |
 
-## Roteiro de demonstração
+As operações que alteram a base pedem confirmação. Para demonstrar a relação entre ordenação e pesquisa, use **Merge Sort por ID** na opção 5 e busque o **ID 1** em `mergesort.txt` pela opção 6.
 
-- **Opções 2, 3 e 4** permitem incluir, alterar votos e excluir. O deque aceita inclusão no início ou no fim. A exclusão LIFO remove o último registro incluído conforme a ordem persistida.
-- **Opção 5** ordena pelo campo selecionado e gera um arquivo com o nome do algoritmo. A **opção 6** pesquisa na entrada ou em uma saída. Para busca binária, primeiro ordene por ID.
-- **Opções 7 e 8** consultam fronteiras e listam cidades de A a Z. A função de cidades indexa pela inicial normalizada e cada balde mantém uma lista ordenada.
-- **Opção 9** executa a comparação dos quatro algoritmos. O programa grava as medições em `resultados/benchmark.csv` e registra o tempo das operações em `resultados/desempenho.csv`.
+## Organização do código
 
-## Base e importador
+| Arquivos | Responsabilidade |
+| --- | --- |
+| [AlemDaUrna](src/main/java/com/mycompany/alemdaurna/AlemDaUrna.java) e [Menu](src/main/java/com/mycompany/alemdaurna/Menu.java) | Inicialização, menu Swing e operações. |
+| [Registro](src/main/java/com/mycompany/alemdaurna/Registro.java), [DequeRegistros](src/main/java/com/mycompany/alemdaurna/DequeRegistros.java) e [ArquivosDados](src/main/java/com/mycompany/alemdaurna/ArquivosDados.java) | Modelo dos dados, lista duplamente ligada e leitura e gravação em UTF-8. |
+| [Ordenacao](src/main/java/com/mycompany/alemdaurna/Ordenacao.java) e [Pesquisa](src/main/java/com/mycompany/alemdaurna/Pesquisa.java) | Quatro algoritmos de ordenação e busca binária. |
+| [TabelasHash](src/main/java/com/mycompany/alemdaurna/TabelasHash.java) e [Normalizacao](src/main/java/com/mycompany/alemdaurna/Normalizacao.java) | Índices geográficos, encadeamento e comparação de nomes. |
+| [Desempenho](src/main/java/com/mycompany/alemdaurna/Desempenho.java) e [ImportarTse](src/main/java/com/mycompany/alemdaurna/ImportarTse.java) | Medição dos tempos e reprodução da base eleitoral. |
 
-O recorte tem 7.740 registros, correspondentes a 645 municípios e 12 candidaturas. A origem, a data de coleta e os critérios de agregação estão em [dados/proveniencia.json](dados/proveniencia.json). [Portal de Dados Abertos do TSE — Resultados 2026](https://dadosabertos.tse.jus.br/dataset/resultados-2026)
+## Dados e resultados
 
-Para reproduzir a base, execute `ImportarTse.java` pela opção **Executar Arquivo** no NetBeans ou rode o comando abaixo a partir da raiz do projeto após compilar. A saída é gravada em `dados/base_reimportada.txt`.
+A [proveniência da base](dados/proveniencia.json) registra a origem, a data da coleta e o recorte aplicado ao CSV. As referências para fronteiras e cidades estão em [fontes geográficas](dados/fontes_geograficas.txt). [Portal de Dados Abertos do TSE](https://dadosabertos.tse.jus.br/dataset/resultados-2026)
 
-```powershell
+Para reproduzir o recorte, execute `ImportarTse.java` com **Executar Arquivo** no NetBeans. Após compilar o JAR, o mesmo importador pode ser executado pelo terminal:
+
+~~~powershell
 java -cp target/AlemDaUrna-1.0-SNAPSHOT.jar com.mycompany.alemdaurna.ImportarTse
-```
+~~~
 
-O executável principal também aceita `--console`, `--gerar-saidas` e `--benchmark`. Por exemplo, `java -jar target/AlemDaUrna-1.0-SNAPSHOT.jar --console` abre o menu no terminal.
-=======
-# AlemDaUrn
->>>>>>> origin/main
+O importador gera `dados/base_reimportada.txt`. A versão arquivada do experimento está nas [medições do benchmark](resultados/benchmark.csv), no [resumo das medianas](resultados/benchmark_resumo.csv) e na [descrição do ambiente](resultados/ambiente.txt). Ao executar a opção 9, o programa regrava `benchmark.csv` e `ambiente.txt`. As operações cronometradas do menu são registradas localmente em `resultados/desempenho.csv`.
+
+## ✨ Desenvolvedores do Projeto
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/ErickFLM">
+        <img src="https://avatars.githubusercontent.com/u/131476329?v=4" width="135" alt="Erick Ferreira no GitHub"><br>
+        <sub><b>Erick Ferreira</b></sub>
+      </a><br>
+      <sub><a href="mailto:erickferreiralima001@gmail.com">erickferreiralima001@gmail.com</a></sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Lehguanaes">
+        <img src="https://avatars.githubusercontent.com/u/125403978?v=4" width="135" alt="Letícia Guanaes no GitHub"><br>
+        <sub><b>Letícia Guanaes</b></sub>
+      </a><br>
+      <sub><a href="mailto:lehguanaes@gmail.com">lehguanaes@gmail.com</a></sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <sub>Projeto desenvolvido em ambiente acadêmico.<br>
+  ✨ Fatec Zona Leste ✨</sub>
+</p>
