@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Além da Urna
 
 Projeto de Estruturas de Dados, 4º bimestre. Faculdade de Tecnologia da Zona Leste.
@@ -58,3 +59,6 @@ java -cp target/AlemDaUrna-1.0-SNAPSHOT.jar com.mycompany.alemdaurna.ImportarTse
 ```
 
 O executável principal também aceita `--console`, `--gerar-saidas` e `--benchmark`. Por exemplo, `java -jar target/AlemDaUrna-1.0-SNAPSHOT.jar --console` abre o menu no terminal.
+=======
+# AlemDaUrn
+>>>>>>> origin/main
