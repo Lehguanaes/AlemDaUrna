@@ -1,0 +1,13 @@
+Argentina;Bolívia, Brasil, Chile, Paraguai, Uruguai
+Bolívia;Argentina, Brasil, Chile, Paraguai, Peru
+Brasil;Argentina, Bolívia, Colômbia, França (via Guiana Francesa), Guiana, Paraguai, Peru, Suriname, Uruguai, Venezuela
+Chile;Argentina, Bolívia, Peru
+Colômbia;Brasil, Equador, Panamá, Peru, Venezuela
+Equador;Colômbia, Peru
+Guiana;Brasil, Suriname, Venezuela
+Paraguai;Argentina, Bolívia, Brasil
+Peru;Bolívia, Brasil, Chile, Colômbia, Equador
+Suriname;Brasil, França (via Guiana Francesa), Guiana
+Uruguai;Argentina, Brasil
+Venezuela;Brasil, Colômbia, Guiana
+França;Alemanha, Andorra, Bélgica, Brasil, Espanha, Itália, Luxemburgo, Mônaco, Países Baixos (ilha de São Martinho), Suíça, Suriname

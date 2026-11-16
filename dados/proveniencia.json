@@ -1,0 +1,51 @@
+{
+  "fonte": "https://dadosabertos.tse.jus.br/dataset/resultados-2026",
+  "download": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2026.zip",
+  "arquivo": "votacao_candidato_munzona_2026_BR.csv",
+  "ano": 2026,
+  "turno": 1,
+  "cargo": "Presidente",
+  "coleta": "2026-11-10",
+  "geracao_tse": [
+    "10/11/2026 12:31:36"
+  ],
+  "linhas_fonte_filtradas": 75504,
+  "sha256_csv_original": "78e8636aad530974494351b8c5bd942933f4f39bfd6f8d5cae5a92be16141ca2",
+  "sha256_base": "bb0ada69bb67a26bd24d80365166458aaa6648bddb4198a3e58ab4593bea4cd7",
+  "registros_agregados_nacionais": 69084,
+  "total_votos_validos_nacional": 119300788,
+  "totais_nacionais_por_candidato": {
+    "FLAVIO BOLSONARO": 56104503,
+    "LULA": 53879538,
+    "ESCRITOR AUGUSTO CURY": 3448569,
+    "RENAN SANTOS": 2675887,
+    "RONALDO CAIADO": 2605148,
+    "ZEMA": 326488,
+    "SAMARA": 122911,
+    "HERTZ DIAS": 43103,
+    "CLARIANA BARAO": 40043,
+    "EDMILSON COSTA": 22693,
+    "VETERINÁRIO WILSON GRASSI": 16881,
+    "RUI COSTA PIMENTA": 15024
+  },
+  "recorte_aplicacao": "Estado de São Paulo, presidente, primeiro turno de 2026; agregado por município e candidato.",
+  "registros_recorte": 7740,
+  "municipios_recorte": 645,
+  "candidatos_recorte": 12,
+  "votos_recorte": 24882948,
+  "totais_recorte": {
+    "FLAVIO BOLSONARO": 12922023,
+    "LULA": 9505413,
+    "ESCRITOR AUGUSTO CURY": 892368,
+    "RENAN SANTOS": 804310,
+    "RONALDO CAIADO": 579571,
+    "ZEMA": 94635,
+    "SAMARA": 42532,
+    "HERTZ DIAS": 15815,
+    "CLARIANA BARAO": 10563,
+    "EDMILSON COSTA": 6129,
+    "VETERINÁRIO WILSON GRASSI": 5160,
+    "RUI COSTA PIMENTA": 4429
+  },
+  "transformacao": "Seleciona ANO_ELEICAO=2026, CD_CARGO=1 e NR_TURNO=1. Soma QT_VOTOS_NOMINAIS_VALIDOS por UF, código TSE do município e número do candidato, incluindo zonas e indicadores de trânsito. A aplicação usa somente SG_UF=SP; totais nacionais de conferência incluem ZZ. Não contém voto individual ou identidade de eleitor."
+}

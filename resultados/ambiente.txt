@@ -1,0 +1,5 @@
+Java: 17.0.3.1
+VM: Java HotSpot(TM) 64-Bit Server VM
+SO: Windows 11 amd64
+Processadores lógicos: 8
+Instante UTC: 2026-11-10T16:43:54.632353800Z
