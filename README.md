@@ -1,3 +1,7 @@
+<div align="center"> 
+<img width="3000" alt="Além da Urna - slide 1" src="https://github.com/user-attachments/assets/5c6416f5-f17a-4c94-b73a-d282b5969b1b" />
+</div>
+
 # Além da Urna
 
 **Uma aplicação em Java para explorar os resultados do primeiro turno presidencial de 2026 em São Paulo.**
